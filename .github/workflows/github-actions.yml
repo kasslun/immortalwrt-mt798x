@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: environment
+        uses: actions/checkout@master
         env:
             DEBIAN_FRONTEND: noninteractive
       - run: |
