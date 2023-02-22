@@ -16,3 +16,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      
+      - name: update
+      - run: ./scripts/feeds update -a
+      - run: ./scripts/feeds install -a
+      
+      - name: build
+      - run: make menuconfig
+      - run: make
